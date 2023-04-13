@@ -2,6 +2,11 @@ from flask import Flask, json, request
 from flask_cors import CORS
 
 filename = "log.json"
+f =  open(filename, "r")
+try:
+  incoming_data = json.loads(f.read())
+except:
+  incoming_data = []
 
 api = Flask(__name__)
 CORS(api)
@@ -22,9 +27,4 @@ def add_data():
 
 
 if __name__ == '__main__':
-    f =  open(filename, "r")
-    try:
-      incoming_data = json.loads(f.read())
-    except:
-      incoming_data = []
     api.run()
