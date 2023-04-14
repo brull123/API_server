@@ -14,10 +14,14 @@ CORS(api)
 
 @api.route('/data', methods=['GET'])
 def get_data():
+  if not incoming_data:
+    return None
   return json.dumps(incoming_data[-1])
 
 @api.route('/download', methods=['GET'])
 def download_data():
+  if not incoming_data:
+    return None
   return json.dumps(incoming_data)
 
 @api.route('/data_post', methods=['PUT'])
