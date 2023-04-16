@@ -3,8 +3,8 @@ import json
 import datetime
 import time
 
-main_url = "http://localhost:5000/"
-# main_url = "https://test-api-gt7l.onrender.com/"
+# main_url = "http://localhost:5000/"
+main_url = "https://test-api-gt7l.onrender.com/"
 
 def get_last():
     sub_url = "data"
